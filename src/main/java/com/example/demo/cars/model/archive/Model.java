@@ -18,31 +18,28 @@ public class Model {
     private String name;
 
 
-    @JsonBackReference
-
     @ManyToOne
     @JoinColumn(name = "brand_id")
     private Brand brand;
 
-/*    private String startYear;
-    private String endYear;*/
 
-    @OneToMany(mappedBy = "model")
+    @JsonBackReference
+
+/*    @OneToMany(mappedBy = "model")
     private List<Version> versions;
 
     @OneToMany(mappedBy = "model")
-    private List<Generation> generations;
+    private List<Generation> generations;*/
 
     @Override
     public String toString() {
         return "Model{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-/*                ", startYear='" + startYear + '\'' +
-                ", endYear='" + endYear + '\'' +*/
+
                 ", brandId=" + (brand != null ? brand.getId() : "null") +
-                ", versionsSize=" + (versions != null ? versions.size() : 0) + // 👈 Unikamy wersji w toString()
-                ", generationsSize=" + (generations != null ? generations.size() : 0)+
+/*                ", versionsSize=" + (versions != null ? versions.size() : 0) + // 👈 Unikamy wersji w toString()
+                ", generationsSize=" + (generations != null ? generations.size() : 0)+*/
                 '}';
     }
 }

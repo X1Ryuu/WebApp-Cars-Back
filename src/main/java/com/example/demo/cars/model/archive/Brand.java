@@ -17,10 +17,10 @@ public class Brand {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @OneToMany(mappedBy = "brand")
-    private List<Model> models;
+/*    @OneToMany(mappedBy = "brand")
+    private List<Model> models;*/
 
-/*    private String nameId;*/
+
     private String name;
     private String logo;
 
@@ -29,8 +29,7 @@ public class Brand {
         return "Brand{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-    //            ", nameId='" + nameId + '\'' +
-                ", modelsSize=" + (models != null ? models.size() : 0) + // 👈 Nie wywołujemy models.toString()
+       //         ", modelsSize=" + (models != null ? models.size() : 0) + // 👈 Nie wywołujemy models.toString()
                 '}';
     }
 

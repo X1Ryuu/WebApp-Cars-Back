@@ -28,9 +28,6 @@ public class Engine {
     private int kWp;
     private String injection;
     private int fromDate;
-/*
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "engine_description_id", referencedColumnName = "id")
-    private EngineDescription engineDescription;*/
+
 
 }
