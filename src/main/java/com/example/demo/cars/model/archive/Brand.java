@@ -1,5 +1,6 @@
 package com.example.demo.cars.model.archive;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.Data;
@@ -18,6 +19,7 @@ public class Brand {
     private Long id;
 
 /*    @OneToMany(mappedBy = "brand")
+    @JsonManagedReference
     private List<Model> models;*/
 
 
@@ -29,7 +31,7 @@ public class Brand {
         return "Brand{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-       //         ", modelsSize=" + (models != null ? models.size() : 0) + // 👈 Nie wywołujemy models.toString()
+      //          ", modelsSize=" + (models != null ? models.size() : 0) + // 👈 Nie wywołujemy models.toString()
                 '}';
     }
 

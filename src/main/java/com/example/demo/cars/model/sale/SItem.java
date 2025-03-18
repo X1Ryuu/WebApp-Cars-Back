@@ -23,6 +23,7 @@ public class SItem {
     private String transmission;
     private String gasoline;
     private Long distance;
+    private String chassisType;
 
     @OneToOne(mappedBy = "item")
     private ItemDesc desc;

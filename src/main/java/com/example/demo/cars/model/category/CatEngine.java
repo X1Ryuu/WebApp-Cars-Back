@@ -20,7 +20,7 @@ public class CatEngine {
 
     @ManyToOne
     @JoinColumn(name = "model_id")
-    private CatModel model;
+    private Model model;
 
     private String gasoline;
     private int volume;

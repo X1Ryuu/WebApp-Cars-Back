@@ -1,5 +1,6 @@
 package com.example.demo.cars.model.archive;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -15,6 +16,7 @@ public class EngineDescription {
 
     @OneToOne
     @JoinColumn(name = "engine_id")
+    @JsonBackReference
     private Engine engine;
 
     private String gasoline;

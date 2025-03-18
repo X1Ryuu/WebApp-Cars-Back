@@ -26,18 +26,13 @@ public class ModelController {
     @GetMapping("/all")
     public ResponseEntity<List<Model>>  getAllModels(){
         List<Model> models = modelService.findAllModels();
-        //List<ModelDTO> modelsDTO = models.stream().map(model -> new ModelDTO(model.getName(), model.getBrand().getName())).toList();
-        System.out.println(models);
-
         return new ResponseEntity<>(models, HttpStatus.OK);
     }
     @GetMapping("/{brandId}")
     public ResponseEntity<List<Model>> getModelsByBrandId(@PathVariable Long brandId){
-        System.out.println(brandId);
-        List<Model> models = modelService.getModelsByBrandId(brandId);
-      //  System.out.println(models);
 
-        System.out.println(brandService.findBrandById(brandId));
+        List<Model> models = modelService.getModelsByBrandId(brandId);
+
         return new ResponseEntity<>(models, HttpStatus.OK);
     }
 
@@ -50,7 +45,7 @@ public class ModelController {
         if (user != null) {
             System.out.println("Authenticated user: " + user);
         }*/
-        System.out.println(modelDTO);
+        //System.out.println(modelDTO);
         Model model = new Model();
         model.setName(modelDTO.getName());
         model.setBrand(brandService.findBrandById(modelDTO.getBrandId()));
@@ -63,7 +58,7 @@ public class ModelController {
 /*        System.out.println(model);
         System.out.println(modelDTO);*/
 
-        System.out.println(model);
+       // System.out.println(model);
         modelService.addModel(model);
 
         //model.setNameId(modelDTO.getName().toLowerCase());

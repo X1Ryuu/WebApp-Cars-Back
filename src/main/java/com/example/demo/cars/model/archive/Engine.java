@@ -1,5 +1,6 @@
 package com.example.demo.cars.model.archive;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -16,10 +17,12 @@ public class Engine {
 
     @ManyToOne
     @JoinColumn(name = "version_id")
+    @JsonBackReference
     private Version version;
 
     @ManyToOne
     @JoinColumn(name = "generation_id")
+    @JsonBackReference
     private Generation generation;
 
     private String gasoline;

@@ -28,7 +28,7 @@ public class BrandService {
     }
     public Brand findBrandByName(String name) {
         for(Brand brand : brandRepository.findAll()) {
-            System.out.println(brand.getName().toLowerCase()+", "+name.toLowerCase());
+       //     System.out.println(brand.getName().toLowerCase()+", "+name.toLowerCase());
             if(brand.getName().equalsIgnoreCase(name)) {
                 return brand;
             }

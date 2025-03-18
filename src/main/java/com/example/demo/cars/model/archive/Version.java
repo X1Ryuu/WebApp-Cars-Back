@@ -1,8 +1,12 @@
 package com.example.demo.cars.model.archive;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.List;
 
 @NoArgsConstructor
 @Data
@@ -21,15 +25,18 @@ public class Version {
 
     @ManyToOne
     @JoinColumn(name = "model_id")
+    @JsonBackReference
     private Model model;
 
 
     @ManyToOne
     @JoinColumn(name = "generation_id")
+    @JsonBackReference
     private Generation generation;
 
-/*    @OneToMany(mappedBy = "version")
-    private List<Engine> engines;*/
+    @OneToMany(mappedBy = "version")
+    @JsonManagedReference
+    private List<Engine> engines;
 
 
     @Override

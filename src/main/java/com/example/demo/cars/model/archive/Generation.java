@@ -1,5 +1,6 @@
 package com.example.demo.cars.model.archive;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -16,6 +17,7 @@ public class Generation {
 
     @ManyToOne
     @JoinColumn(name = "model_id")
+    @JsonBackReference
     private Model model;
 
     private String startYear;
