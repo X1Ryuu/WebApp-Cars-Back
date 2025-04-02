@@ -1,9 +1,12 @@
 package com.example.demo.cars.model.archive;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.List;
 
 @NoArgsConstructor
 @Data
@@ -23,4 +26,7 @@ public class Generation {
     private String startYear;
     private String endYear;
 
+    @OneToMany(mappedBy = "generation")
+    @JsonManagedReference
+    private List<Version> versions;
 }

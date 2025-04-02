@@ -20,15 +20,15 @@ public class EngineDescription {
     private Engine engine;
 
     private String gasoline;
-    private int volume;
-    private int hp;
-    private int kWp;
+    private Integer volume;
+    private Integer hp;
+    private Integer kWp;
     private String injection;
-    private int fromDate;
-    private float acceleration;
-    private float topSpeed;
+    private Integer fromDate;
+    private Float acceleration;
+    private Float topSpeed;
     private String engineType;
-    private int numOfCylinders;
+    private Integer numOfCylinders;
     private String gearbox;
     private String driveType; //AWD-constantConnection, AWD-automatic,
     // AWD-manualConnection or (xDrive, 4-matic, quattro), FWD, RWD

@@ -18,9 +18,9 @@ public class Brand {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-/*    @OneToMany(mappedBy = "brand")
+    @OneToMany(mappedBy = "brand")
     @JsonManagedReference
-    private List<Model> models;*/
+    private List<Model> models;
 
 
     private String name;

@@ -19,53 +19,39 @@ public class ModelController {
 
     ModelService modelService;
     BrandService brandService;
-    @Autowired
-    public ModelController(ModelService modelService, BrandService brandService){this.modelService = modelService;
-        this.brandService = brandService;}
+
+    ModelController(ModelService modelService, BrandService brandService){
+        this.modelService=modelService;
+        this.brandService=brandService;
+    }
 
     @GetMapping("/all")
     public ResponseEntity<List<Model>>  getAllModels(){
         List<Model> models = modelService.findAllModels();
         return new ResponseEntity<>(models, HttpStatus.OK);
     }
-    @GetMapping("/{brandId}")
-    public ResponseEntity<List<Model>> getModelsByBrandId(@PathVariable Long brandId){
-
+/*    @GetMapping("/{brandId}")
+    public ResponseEntity<List<Model>> getModelsByBrandId(@PathVariable Long brandId) {
         List<Model> models = modelService.getModelsByBrandId(brandId);
 
         return new ResponseEntity<>(models, HttpStatus.OK);
+    }*/
+    @GetMapping("/{name}")
+    public ResponseEntity<List<Model>> getModelsByBrandName(@PathVariable String name) {
+        System.out.println(name);
+        return new ResponseEntity<>(modelService.getModelsByBrandName(name), HttpStatus.OK);
     }
+
+
 
     @PostMapping("/add")
     public ResponseEntity<?> addModel(@RequestBody ModelDTO modelDTO){
-/*        var jwt = (CustomJwt) SecurityContextHolder.getContext().getAuthentication();
-        //Brand newBrand = brand;
-        String user = jwt.getUsername();
-
-        if (user != null) {
-            System.out.println("Authenticated user: " + user);
-        }*/
-        //System.out.println(modelDTO);
+        System.out.println(modelDTO);
         Model model = new Model();
         model.setName(modelDTO.getName());
-        model.setBrand(brandService.findBrandById(modelDTO.getBrandId()));
-     //   model.setNameId(modelDTO.getName().toLowerCase());
-/*        model.setEndYear(modelDTO.getEndYear());
-        model.setStartYear(modelDTO.getStartYear());*/
-  //      System.out.println(modelDTO+", "+model+", "+modelDTO.getBrandId());
-        //model.setBrand(brandService.findByNameId(modelDTO.getBrandId()));
-   //     Brand brand = brandService.findByNameId(modelDTO.getBrandId());
-/*        System.out.println(model);
-        System.out.println(modelDTO);*/
-
-       // System.out.println(model);
+        model.setBrand(brandService.findByName(modelDTO.getBrandName()));
         modelService.addModel(model);
-
-        //model.setNameId(modelDTO.getName().toLowerCase());
-      //  System.out.println(model);
-        //    Brand newBrand = brandService.addBrand(brand);
-        //eturn new ResponseEntity<>(newBrand, HttpStatus.CREATED);
-        /*return ResponseEntity.status(HttpStatus.CREATED).body("Brand added successfully!");*/
+        System.out.println(model);
         return new ResponseEntity<>(modelDTO, HttpStatus.CREATED);
     }
 

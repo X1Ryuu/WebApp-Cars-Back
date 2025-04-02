@@ -9,8 +9,5 @@ import lombok.NoArgsConstructor;
 @Data
 public class ModelDTO {
     private String name;
-
-    private Long brandId;
-/*    private String startYear;
-    private String endYear;*/
+    private String brandName;
 }
