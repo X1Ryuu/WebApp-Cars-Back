@@ -45,6 +45,7 @@ public class ModelController {
         System.out.println("models: "+models);
         return new ResponseEntity<>(models, HttpStatus.OK);
     }
+
     @PostMapping("/add")
     public ResponseEntity<?> addModel(@RequestBody ModelDTO modelDTO){
 /*        var jwt = (CustomJwt) SecurityContextHolder.getContext().getAuthentication();

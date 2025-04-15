@@ -19,9 +19,8 @@ import java.util.List;
 @RequestMapping("/brands")
 public class BrandController {
 
-
     BrandService brandService;
-    @Autowired
+
     public BrandController(BrandService brandService) {
         this.brandService = brandService;
     }
@@ -31,6 +30,7 @@ public class BrandController {
     public ResponseEntity<List<Brand>> getAllBrands(){
         List<Brand> brands = brandService.findAllBrands();
         brands.sort(new BrandComparator());
+        //System.out.println(brands);
         return new ResponseEntity<>(brands, HttpStatus.OK);
     }
 
@@ -47,8 +47,9 @@ public class BrandController {
     }*/
     @GetMapping("/{brandName}")
     public ResponseEntity<Brand> getBrandByName(@PathVariable("brandName") String brandName) {
-        Brand brand = brandService.findBrandByName(brandName);
-        return new ResponseEntity<>(brand, HttpStatus.OK);
+        /*Brand brand = brandService.findBrandByName(brandName);
+        return new ResponseEntity<>(brand, HttpStatus.OK);*/
+        return new ResponseEntity<>(brandService.findByName(brandName), HttpStatus.OK);
     }
 
 

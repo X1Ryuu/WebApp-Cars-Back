@@ -25,6 +25,11 @@ public class Engine {
     @JsonBackReference("generation-engine")
     private Generation generation;
 
+    @ManyToOne
+    @JoinColumn(name = "model_id")
+    @JsonBackReference
+    private Model model;
+
     private String gasoline;
     private Integer volume;
     private Integer hp;

@@ -20,7 +20,7 @@ public class Generation {
 
     @ManyToOne
     @JoinColumn(name = "model_id")
-    @JsonBackReference("model-generation")
+    @JsonBackReference
     private Model model;
 
     private String startYear;

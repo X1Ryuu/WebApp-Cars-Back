@@ -1,0 +1,236 @@
+[
+  {
+    "name": "Audi",
+    "models": [
+      {
+        "name": "A3",
+        "generations": [
+          {"name": "8L", "startYear": "1996", "endYear": "2003"},
+          {"name": "8V", "startYear": "2012", "endYear": "2020"},
+          {"name": "8P", "startYear": "2003", "endYear": "2013"},
+          {"name": "8Y", "startYear": "2020", "endYear": "now"}
+        ]
+      },
+      {
+        "name": "A4"
+      },
+      {
+        "name": "A5"
+      }
+    ]
+  },
+  {
+    "name": "BMW",
+    "models": [
+      {
+        "name": "3 series"
+      },
+      {
+        "name": "4 series"
+      },
+      {
+        "name": "5 series"
+      }
+    ]
+  },
+  {
+    "name": "Mercedes",
+    "models": [
+      {
+        "name": "CLA"
+      },
+      {
+        "name": "CLE"
+      },
+      {
+        "name": "G"
+      },
+      {
+        "name": "CLS",
+        "generations": [
+          {
+            "name": "W219",
+            "startYear": "2004",
+            "endYear": "2011"
+          },
+          {
+            "name": "W218",
+            "startYear": "2011",
+            "endYear": "2017"
+          },
+          {
+            "name": "C257",
+            "startYear": "2018",
+            "endYear": "2023"
+          }
+        ]
+
+      },
+      {
+        "name": "GLA"
+      },
+      {
+        "name": "GLS"
+      },
+      {
+        "name": "AMG GT"
+      }
+    ]
+  },
+  {
+    "name": "Opel",
+    "models": [
+      {
+        "name": "Astra"
+      },
+      {
+        "name": "Mokka"
+      },
+      {
+        "name": "Corsa"
+      },
+      {
+        "name": "Insignia",
+        "generations": [
+          {
+            "name": "I",
+            "startYear": "2008",
+            "endYear": "2017"
+          },
+          {
+            "name": "II",
+            "startYear": "2017",
+            "endYear":"2023"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Volkswagen",
+    "models": [
+      {
+        "name": "Phaeton"
+      },
+      {
+        "name": "Passat"
+      },
+      {
+        "name": "Golf"
+      },
+      {
+        "name": "Polo"
+      }
+    ]
+  },
+  {
+    "name": "Porsche",
+    "models": [
+      {
+        "name": "Taycan",
+        "versions": [
+          {
+            "name": "Grand Tourer Facelifting",
+            "startYear": "2024",
+            "endYear": "now"
+          },
+          {
+            "name": "Cross Turismo Facelifting",
+            "startYear": "2024",
+            "endYear": "now"
+          },
+          {
+            "name": "Sport Turismo Facelifting",
+            "startYear": "2024",
+            "endYear": "now"
+          },
+          {
+            "name": "Sport Turismo",
+            "startYear": "2022",
+            "endYear": "now"
+          },
+          {
+            "name": "Cross Turismo",
+            "startYear": "2021",
+            "endYear": "now"
+          },
+          {
+            "name": "Grand Tourer",
+            "startYear": "2019",
+            "endYear": "now"
+          }
+        ]
+      },
+      {
+        "name": "Panamera",
+        "generations": [
+          {
+            "name": "I",
+            "startYear": "2010",
+            "endYear": "2016",
+            "versions": [
+              {
+                "name": "Limousine Facelifting",
+                "startYear": "2013",
+                "endYear": "2016"
+              },
+              {
+                "name": "Executive",
+                "startYear": "2013",
+                "endYear": "2016"
+              },
+              {
+                "name": "Liftback",
+                "startYear": "2010",
+                "endYear": "2012"
+              }
+            ]
+          },
+          {
+            "name": "II",
+            "startYear": "2016",
+            "endYear": "2024"
+          },
+          {
+            "name": "III",
+            "startYear": "2024",
+            "endYear": "now"
+          }
+        ]
+      },
+      {
+        "name": "Cayenne"
+      }
+    ]
+  },
+  {
+    "name": "Skoda",
+    "models": [
+      {
+        "name": "Fabia"
+      },
+      {
+        "name": "Kodiaq"
+      },
+      {
+        "name": "Octavia"
+      }
+    ]
+  },
+  {
+    "name": "Fiat",
+    "models": [
+      {
+        "name": "500"
+      },
+      {
+        "name": "Panda"
+      },
+      {
+        "name": "126p"
+      }
+  ]
+  }
+
+]
+

@@ -35,6 +35,10 @@ public class Model {
     @JsonManagedReference("model-generation")
     private List<Generation> generations;
 
+    @OneToMany(mappedBy = "model")
+    @JsonManagedReference
+    private List<Engine> engines;
+
     @Override
     public String toString() {
         return "Model{" +
