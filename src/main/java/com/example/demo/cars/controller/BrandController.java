@@ -54,27 +54,12 @@ public class BrandController {
 
     @PostMapping("/add")
     public ResponseEntity<?> addBrand(@RequestBody Brand brand){
-        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-/*        System.out.println(authentication);
-// Sprawdź, czy użytkownik jest uwierzytelniony
-        if (!(authentication instanceof CustomJwt)) {
-            System.out.println("Brak uwierzytelnienia lub użytkownik jest anonimowy.");
-            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Brak uprawnień");
-        }*/
 
-        CustomJwt jwt = (CustomJwt) authentication;
-        String user = jwt.getUsername();
-        System.out.println("Authenticated user: " + user);
-
-  //      brand.setNameId(brand.getName().toLowerCase());
-      //  brand.setLogo("logo");
         System.out.println(brand);
         brandService.addBrand(brand);
-    //    Brand newBrand = brandService.addBrand(brand);
+
         return new ResponseEntity<>(brand, HttpStatus.CREATED);
 
-//        return ResponseEntity.ok(brandService.addBrand(brand));
-        //   return ResponseEntity.status(HttpStatus.CREATED).body("Brand added successfully!");
     }
 
     @GetMapping("/hello")

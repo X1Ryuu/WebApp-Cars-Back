@@ -9,7 +9,7 @@ import java.util.List;
 
 @Service
 public class ModelService {
-    @Autowired
+
     private ModelRepository modelRepository;
 
     public ModelService(ModelRepository modelRepository){this.modelRepository = modelRepository;}
@@ -20,6 +20,12 @@ public class ModelService {
         }
         return models;
     }
+
+    public List<Model> getModelsByBrandName(String name){
+        return modelRepository.findAllByBrand_NameOrderByName(name);
+    }
+
+
 
     public List<Model> getModelsByBrandId(Long id){
         List<Model> models = new java.util.ArrayList<>();

@@ -28,14 +28,23 @@ public class ModelController {
         List<Model> models = modelService.findAllModels();
         return new ResponseEntity<>(models, HttpStatus.OK);
     }
-    @GetMapping("/{brandId}")
+/*    @GetMapping("/{brandId}")
     public ResponseEntity<List<Model>> getModelsByBrandId(@PathVariable Long brandId){
 
         List<Model> models = modelService.getModelsByBrandId(brandId);
 
+        System.out.println("models: "+models);
+        return new ResponseEntity<>(models, HttpStatus.OK);
+    }*/
+
+    @GetMapping("/{brandName}")
+    public ResponseEntity<List<Model>> getModelsByBrandName(@PathVariable String brandName){
+
+        List<Model> models = modelService.getModelsByBrandName(brandName);
+
+        System.out.println("models: "+models);
         return new ResponseEntity<>(models, HttpStatus.OK);
     }
-
     @PostMapping("/add")
     public ResponseEntity<?> addModel(@RequestBody ModelDTO modelDTO){
 /*        var jwt = (CustomJwt) SecurityContextHolder.getContext().getAuthentication();

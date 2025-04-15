@@ -25,17 +25,17 @@ public class Version {
 
     @ManyToOne
     @JoinColumn(name = "model_id")
-    @JsonBackReference
+    @JsonBackReference("model-version")
     private Model model;
 
 
     @ManyToOne
     @JoinColumn(name = "generation_id")
-    @JsonBackReference
+    @JsonBackReference("generation-version")
     private Generation generation;
 
-    @OneToMany(mappedBy = "version")
-    @JsonManagedReference
+    @OneToMany(mappedBy = "version", cascade = CascadeType.ALL)
+    @JsonManagedReference("version-engine")
     private List<Engine> engines;
 
 

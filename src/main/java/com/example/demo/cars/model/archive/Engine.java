@@ -17,20 +17,20 @@ public class Engine {
 
     @ManyToOne
     @JoinColumn(name = "version_id")
-    @JsonBackReference
+    @JsonBackReference("version-engine")
     private Version version;
 
     @ManyToOne
     @JoinColumn(name = "generation_id")
-    @JsonBackReference
+    @JsonBackReference("generation-engine")
     private Generation generation;
 
     private String gasoline;
-    private int volume;
-    private int hp;
-    private int kWp;
+    private Integer volume;
+    private Integer hp;
+    private Integer kWp;
     private String injection;
-    private int fromDate;
+    private Integer fromDate;
 
 
 }

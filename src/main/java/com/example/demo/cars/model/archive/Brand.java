@@ -18,14 +18,12 @@ public class Brand {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-/*    @OneToMany(mappedBy = "brand")
-    @JsonManagedReference
-    private List<Model> models;*/
-
-
     private String name;
     private String logo;
 
+    @OneToMany(mappedBy = "brand", cascade = CascadeType.ALL)
+    @JsonManagedReference("brand-model")
+    private List<Model> models;
     @Override
     public String toString() {
         return "Brand{" +

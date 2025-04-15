@@ -21,18 +21,18 @@ public class Model {
 
     @ManyToOne
     @JoinColumn(name = "brand_id")
-    @JsonBackReference
+    @JsonBackReference("brand-model")
     private Brand brand;
 
 
 
 
-    @OneToMany(mappedBy = "model")
-    @JsonManagedReference
+    @OneToMany(mappedBy = "model", cascade = CascadeType.ALL)
+    @JsonManagedReference("model-version")
     private List<Version> versions;
 
-    @OneToMany(mappedBy = "model")
-    @JsonManagedReference
+    @OneToMany(mappedBy = "model", cascade = CascadeType.ALL)
+    @JsonManagedReference("model-generation")
     private List<Generation> generations;
 
     @Override

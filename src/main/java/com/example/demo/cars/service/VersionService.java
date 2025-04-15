@@ -5,6 +5,8 @@ import com.example.demo.cars.repository.VersionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class VersionService {
 
@@ -17,5 +19,14 @@ public class VersionService {
 
     public void addVersion(Version version) {
         versionRepository.save(version);
+    }
+    public List<Version> findAllVersions(){return versionRepository.findAll();}
+
+    public List<Version> getVersionsByModelName(String name) {
+        return versionRepository.findAllByModel_NameOrderByName(name);
+    }
+
+    public List<Version> getVersionsByGenerationName(String name) {
+        return versionRepository.findAllByGeneration_NameOrderByName(name);
     }
 }

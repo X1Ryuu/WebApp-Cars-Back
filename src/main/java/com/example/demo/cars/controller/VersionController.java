@@ -8,6 +8,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @CrossOrigin(origins = "http://localhost:4200", allowedHeaders = "*")
 @RequestMapping("/versions")
@@ -29,6 +31,15 @@ public class VersionController {
         return new ResponseEntity<>(brands, HttpStatus.OK);
     }*/
 
+    @GetMapping("/gens/{genName}")
+    public ResponseEntity<List<Version>> getVersionsByGenerationName(@PathVariable String genName){
+        return new ResponseEntity<>(versionService.getVersionsByGenerationName(genName), HttpStatus.OK);
+    }
+
+    @GetMapping("/mods/{verName}")
+    public ResponseEntity<List<Version>> getVersionsByModelName(@PathVariable String verName){
+        return new ResponseEntity<>(versionService.getVersionsByModelName(verName), HttpStatus.OK);
+    }
 
     @PostMapping("/add")
     public ResponseEntity<?> addVersion(@RequestBody Version version){

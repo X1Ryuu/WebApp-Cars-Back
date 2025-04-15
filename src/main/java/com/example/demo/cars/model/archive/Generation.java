@@ -1,9 +1,12 @@
 package com.example.demo.cars.model.archive;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.List;
 
 @NoArgsConstructor
 @Data
@@ -17,10 +20,14 @@ public class Generation {
 
     @ManyToOne
     @JoinColumn(name = "model_id")
-    @JsonBackReference
+    @JsonBackReference("model-generation")
     private Model model;
 
     private String startYear;
     private String endYear;
+
+    @OneToMany(mappedBy = "generation", cascade = CascadeType.ALL)
+    @JsonManagedReference("generation-version")
+    private List<Version> versions;
 
 }
