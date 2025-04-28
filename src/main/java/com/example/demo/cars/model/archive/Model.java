@@ -36,7 +36,7 @@ public class Model {
     private List<Generation> generations;
 
     @OneToMany(mappedBy = "model")
-    @JsonManagedReference
+    @JsonManagedReference("model-engine")
     private List<Engine> engines;
 
     @Override

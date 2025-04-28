@@ -25,6 +25,7 @@ public class SItem {
     private Long distance;
     private String chassisType;
 
-    @OneToOne(mappedBy = "item")
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "item_id", referencedColumnName = "id")
     private ItemDesc desc;
 }

@@ -5,17 +5,33 @@
       {
         "name": "A3",
         "generations": [
-          {"name": "8L", "startYear": "1996", "endYear": "2003"},
-          {"name": "8V", "startYear": "2012", "endYear": "2020"},
-          {"name": "8P", "startYear": "2003", "endYear": "2013"},
-          {"name": "8Y", "startYear": "2020", "endYear": "now"}
+          {
+            "name": "8Y",
+            "startYear": "2020",
+            "endYear": "now"
+          },
+          {
+            "name": "8V",
+            "startYear": "2012",
+            "endYear": "2020"
+          },
+          {
+            "name": "8P",
+            "startYear": "2003",
+            "endYear": "2013"
+          },
+          {
+            "name":"8L",
+            "startYear": "1996",
+            "endYear": "2003"
+          }
         ]
       },
       {
         "name": "A4"
       },
       {
-        "name": "A5"
+        "name": "A6"
       }
     ]
   },
@@ -23,103 +39,13 @@
     "name": "BMW",
     "models": [
       {
-        "name": "3 series"
+        "name": "5 Series"
       },
       {
-        "name": "4 series"
+        "name": "7 Series"
       },
       {
-        "name": "5 series"
-      }
-    ]
-  },
-  {
-    "name": "Mercedes",
-    "models": [
-      {
-        "name": "CLA"
-      },
-      {
-        "name": "CLE"
-      },
-      {
-        "name": "G"
-      },
-      {
-        "name": "CLS",
-        "generations": [
-          {
-            "name": "W219",
-            "startYear": "2004",
-            "endYear": "2011"
-          },
-          {
-            "name": "W218",
-            "startYear": "2011",
-            "endYear": "2017"
-          },
-          {
-            "name": "C257",
-            "startYear": "2018",
-            "endYear": "2023"
-          }
-        ]
-
-      },
-      {
-        "name": "GLA"
-      },
-      {
-        "name": "GLS"
-      },
-      {
-        "name": "AMG GT"
-      }
-    ]
-  },
-  {
-    "name": "Opel",
-    "models": [
-      {
-        "name": "Astra"
-      },
-      {
-        "name": "Mokka"
-      },
-      {
-        "name": "Corsa"
-      },
-      {
-        "name": "Insignia",
-        "generations": [
-          {
-            "name": "I",
-            "startYear": "2008",
-            "endYear": "2017"
-          },
-          {
-            "name": "II",
-            "startYear": "2017",
-            "endYear":"2023"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "name": "Volkswagen",
-    "models": [
-      {
-        "name": "Phaeton"
-      },
-      {
-        "name": "Passat"
-      },
-      {
-        "name": "Golf"
-      },
-      {
-        "name": "Polo"
+        "name": "3 Series"
       }
     ]
   },
@@ -127,11 +53,106 @@
     "name": "Porsche",
     "models": [
       {
+        "name": "911"
+      },
+      {
+        "name": "Panamera",
+        "generations": [
+          {
+            "name": "I",
+            "startYear": "2010",
+            "endYear": "2016"
+          },
+          {
+            "name": "III",
+            "startYear": "2024",
+            "endYear": "now"
+          },
+          {
+            "name": "II",
+            "startYear": "2016",
+            "endYear": "2024",
+            "versions": [
+              {
+                "name": "Liftback Facelifting",
+                "startYear": "2020",
+                "endYear": "2024"
+              },
+              {
+                "name": "Liftback Plug-in Hybrid Facelifting",
+                "startYear": "2020",
+                "endYear": "2024"
+              },
+              {
+                "name": "Liftback GTS Facelifting",
+                "startYear": "2020",
+                "endYear": "2024"
+              },
+              {
+                "name": "Sport Turismo Plug-in Hybrid Facelifting",
+                "startYear": "2020",
+                "endYear": "2024"
+              },
+              {
+                "name": "Sport Turismo GTS Facelifting",
+                "startYear": "2020",
+                "endYear": "2024"
+              },
+              {
+                "name": "Liftback Executive Facelifting",
+                "startYear": "2020",
+                "endYear": "2024"
+              },
+              {
+                "name": "Liftback Executive Plug-in Hybrid Facelifting",
+                "startYear": "2020",
+                "endYear": "2024"
+              },
+              {
+                "name": "Sport Turismo Facelifting",
+                "startYear": "2020",
+                "endYear": "2024"
+              },
+              {
+                "name": "GTS Sport Turismo",
+                "startYear": "2020",
+                "endYear": "2024"
+              },
+              {
+                "name": "GTS",
+                "startYear": "2020",
+                "endYear": "2024"
+              },
+              {
+                "name": "Sport Turismo",
+                "startYear": "2020",
+                "endYear": "2024"
+              },
+              {
+                "name": "Liftback",
+                "startYear": "2016",
+                "endYear": "2020"
+              },
+              {
+                "name": "Executive",
+                "startYear": "2016",
+                "endYear": "2020"
+              }
+            ]
+          }
+        ]
+      },
+      {
         "name": "Taycan",
         "versions": [
           {
             "name": "Grand Tourer Facelifting",
             "startYear": "2024",
+            "endYear": "now"
+          },
+          {
+            "name": "Grand Tourer",
+            "startYear": "2019",
             "endYear": "now"
           },
           {
@@ -153,53 +174,34 @@
             "name": "Cross Turismo",
             "startYear": "2021",
             "endYear": "now"
-          },
-          {
-            "name": "Grand Tourer",
-            "startYear": "2019",
-            "endYear": "now"
           }
         ]
+      }
+    ]
+  },
+  {
+    "name": "Volkswagen",
+    "models": [
+      {
+        "name": "Passat"
       },
       {
-        "name": "Panamera",
-        "generations": [
-          {
-            "name": "I",
-            "startYear": "2010",
-            "endYear": "2016",
-            "versions": [
-              {
-                "name": "Limousine Facelifting",
-                "startYear": "2013",
-                "endYear": "2016"
-              },
-              {
-                "name": "Executive",
-                "startYear": "2013",
-                "endYear": "2016"
-              },
-              {
-                "name": "Liftback",
-                "startYear": "2010",
-                "endYear": "2012"
-              }
-            ]
-          },
-          {
-            "name": "II",
-            "startYear": "2016",
-            "endYear": "2024"
-          },
-          {
-            "name": "III",
-            "startYear": "2024",
-            "endYear": "now"
-          }
-        ]
+        "name": "Golf"
       },
       {
-        "name": "Cayenne"
+        "name": "Tiguan"
+      },
+      {
+        "name": "Touareg"
+      },
+      {
+        "name": "Polo"
+      },
+      {
+        "name": "Jetta"
+      },
+      {
+        "name": "Phaeton"
       }
     ]
   },
@@ -207,13 +209,19 @@
     "name": "Skoda",
     "models": [
       {
-        "name": "Fabia"
+        "name": "Octavia"
+      },
+      {
+        "name": "Superb"
+      },
+      {
+        "name": "Karoq"
       },
       {
         "name": "Kodiaq"
       },
       {
-        "name": "Octavia"
+        "name": "Rapid"
       }
     ]
   },
@@ -228,9 +236,76 @@
       },
       {
         "name": "126p"
+      },
+      {
+        "name": "Punto"
       }
-  ]
+    ]
+  },
+  {
+    "name": "Volvo",
+    "models": [
+      {
+        "name": "S60"
+      },
+      {
+        "name": "V60"
+      },
+      {
+        "name": "V90"
+      },
+      {
+        "name": "XC40"
+      }
+    ]
+  },
+  {
+    "name": "Mazda",
+    "models": [
+      {
+        "name": "3"
+      },
+      {
+        "name": "6"
+      },
+      {
+        "name": "CX-5"
+      },
+      {
+        "name": "CX-9"
+      }
+    ]
+  },
+  {
+    "name": "Mercedes",
+    "models": [
+      {
+        "name": "A-Class"
+      },
+      {
+        "name": "C-Class"
+      },
+      {
+        "name": "E-Class"
+      },
+      {
+        "name": "G-Class"
+      },
+      {
+        "name": "S-Class"
+      },
+      {
+        "name": "CLS"
+      },
+      {
+        "name": "GLA"
+      },
+      {
+        "name": "GLC"
+      },
+      {
+        "name": "GLE"
+      }
+    ]
   }
-
 ]
-

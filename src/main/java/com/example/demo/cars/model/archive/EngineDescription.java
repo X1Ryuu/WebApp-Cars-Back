@@ -16,7 +16,7 @@ public class EngineDescription {
 
     @OneToOne
     @JoinColumn(name = "engine_id")
-    @JsonBackReference
+    @JsonBackReference("engine-description")
     private Engine engine;
 
     private String gasoline;

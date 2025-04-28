@@ -22,7 +22,7 @@ import java.util.*;
 public class DataInitializr {
 
     @Bean
-    CommandLineRunner initDatabase(ModelRepository modelRepository, BrandRepository brandRepository, GenerationRepository generationRepository, VersionRepository versionRepository) throws FileNotFoundException {
+    CommandLineRunner initDatabase(BrandRepository brandRepository){
 
         return args -> {
             ObjectMapper objectMapper = new ObjectMapper();
@@ -35,14 +35,17 @@ public class DataInitializr {
                // System.out.println(brandD.name);
                 Brand brand = new Brand();
                 brand.setName(brandD.name);
-                brandRepository.save(brand);
+                List<Model> models = new ArrayList<>();
+                //brandRepository.save(brand);
                 if (brandD.models() != null) {
                     for (ModelData modelD : brandD.models()) {
                       //  System.out.println("   " + modelD.name);
                         Model model = new Model();
                         model.setName(modelD.name);
                         model.setBrand(brand);
-                        modelRepository.save(model);
+                        models.add(model);
+                        List<Generation> generations = new ArrayList<>();
+                        //modelRepository.save(model);
                         if (modelD.generations() != null) {
                             for (GenerationData generationD : modelD.generations()) {
                         //        System.out.println("      " + generationD.name);
@@ -51,7 +54,9 @@ public class DataInitializr {
                                 generation.setModel(model);
                                 generation.setEndYear(generationD.endYear);
                                 generation.setStartYear(generationD.startYear);
-                                generationRepository.save(generation);
+                                generations.add(generation);
+                                List<Version> versions = new ArrayList<>();
+                                //generationRepository.save(generation);
                                 if (generationD.versions() != null) {
                                     for (VersionData versionD : generationD.versions()) {
                                      //   System.out.println("         " + versionD.name);
@@ -60,11 +65,15 @@ public class DataInitializr {
                                         version.setName(versionD.name);
                                         version.setGeneration(generation);
                                         version.setEndYear(versionD.endYear);
-                                        versionRepository.save(version);
+                                        versions.add(version);
+                                        //versionRepository.save(version);
                                     }
+                                    generation.setVersions(versions);
                                 }
                             }
+                            model.setGenerations(generations);
                         }
+                        List<Version> versions = new ArrayList<>();
                         if (modelD.versions() != null) {
                             for (VersionData versionD : modelD.versions()) {
                               //  System.out.println("         " + versionD.name);
@@ -73,11 +82,16 @@ public class DataInitializr {
                                 version.setName(versionD.name);
                                 version.setModel(model);
                                 version.setEndYear(versionD.endYear);
-                                versionRepository.save(version);
+                                versions.add(version);
+                                //versionRepository.save(version);
                             }
+                            model.setVersions(versions);
+
                         }
                     }
+                    brand.setModels(models);
                 }
+                brandRepository.save(brand);
             }
          };
 

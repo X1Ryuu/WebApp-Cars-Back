@@ -27,7 +27,7 @@ public class Engine {
 
     @ManyToOne
     @JoinColumn(name = "model_id")
-    @JsonBackReference
+    @JsonBackReference("model-engine")
     private Model model;
 
     private String gasoline;

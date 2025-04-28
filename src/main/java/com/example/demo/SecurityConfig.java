@@ -8,8 +8,8 @@ import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
-import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
-import org.springframework.security.config.annotation.web.configurers.HeadersConfigurer;
+    import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
+    import org.springframework.security.config.annotation.web.configurers.HeadersConfigurer;
 import org.springframework.security.oauth2.jwt.Jwt;
 import org.springframework.security.oauth2.jwt.JwtDecoder;
 import org.springframework.security.oauth2.jwt.JwtDecoders;
@@ -64,11 +64,11 @@ public class SecurityConfig {
         };
     }
 
-/*    @Bean
+    @Bean
     public JwtDecoder jwtDecoder() {
         String issuerUri = "http://localhost:9090/realms/my-realm";
         return JwtDecoders.fromIssuerLocation(issuerUri);
-    }*/
+    }
 
 
 
