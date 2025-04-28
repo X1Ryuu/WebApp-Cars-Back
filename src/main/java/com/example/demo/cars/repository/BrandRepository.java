@@ -11,6 +11,8 @@ import java.util.Optional;
 public interface BrandRepository extends JpaRepository<Brand, Long> {
     Brand findByName(String name);
 
+
+    List<Brand> findAllByOrderByName();
     void deleteById(Long id);
 
 

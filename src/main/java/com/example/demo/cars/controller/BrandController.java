@@ -2,7 +2,7 @@ package com.example.demo.cars.controller;
 
 import com.example.demo.cars.model.archive.Brand;
 import com.example.demo.cars.service.BrandService;
-import com.example.demo.comparators.BrandComparator;
+
 import com.example.demo.jwt.CustomJwt;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -29,7 +29,6 @@ public class BrandController {
     @GetMapping("/all")
     public ResponseEntity<List<Brand>> getAllBrands(){
         List<Brand> brands = brandService.findAllBrands();
-        brands.sort(new BrandComparator());
         //System.out.println(brands);
         return new ResponseEntity<>(brands, HttpStatus.OK);
     }

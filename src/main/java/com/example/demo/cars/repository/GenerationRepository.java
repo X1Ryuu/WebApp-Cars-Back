@@ -10,4 +10,5 @@ import java.util.List;
 @Repository
 public interface GenerationRepository extends JpaRepository<Generation, Long> {
     List<Generation> findAllByModel_NameOrderByName(String name);
+
 }
