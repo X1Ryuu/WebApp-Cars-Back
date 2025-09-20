@@ -11,6 +11,7 @@ import jakarta.persistence.criteria.CriteriaBuilder;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Profile;
 import org.springframework.util.ResourceUtils;
 
 import java.io.File;
@@ -21,6 +22,7 @@ import java.util.*;
 @Configuration
 public class DataInitializr {
 
+    @Profile("h2")
     @Bean
     CommandLineRunner initDatabase(BrandRepository brandRepository){
 
