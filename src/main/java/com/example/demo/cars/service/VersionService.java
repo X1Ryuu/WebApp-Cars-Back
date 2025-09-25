@@ -22,11 +22,19 @@ public class VersionService {
     }
     public List<Version> findAllVersions(){return versionRepository.findAll();}
 
-    public List<Version> getVersionsByModelName(String name) {
+    public List<Version> findVersionsByModelName(String name) {
         return versionRepository.findAllByModel_NameOrderByName(name);
     }
 
-    public List<Version> getVersionsByGenerationName(String name) {
+    public List<Version> findVersionsByGenerationName(String name) {
         return versionRepository.findAllByGeneration_NameOrderByName(name);
+    }
+
+    public List<Version> findVersionsByModelId(Long id) {
+        return versionRepository.findVersionsByModel_IdOrderByName(id);
+    }
+
+    public List<Version> findVersionsByGenerationId(Long id) {
+        return versionRepository.findVersionsByGeneration_IdOrderByName(id);
     }
 }

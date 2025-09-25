@@ -14,4 +14,6 @@ public interface VersionRepository extends JpaRepository<Version, Long> {
     Optional<Version> findByModel(Model model);
     List<Version> findAllByGeneration_NameOrderByName(String name);
     List<Version> findAllByModel_NameOrderByName(String name);
+    List<Version> findVersionsByModel_IdOrderByName(Long id);
+    List<Version> findVersionsByGeneration_IdOrderByName(Long id);
 }

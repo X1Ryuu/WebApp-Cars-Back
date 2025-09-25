@@ -31,11 +31,11 @@ public class Engine {
     private Model model;
 
     private String gasoline;
-    private Integer volume;
+    private String volume;
     private Integer hp;
-    private Integer kWp;
+    private Integer hybridHp;
     private String injection;
-    private Integer fromDate;
+    private String fromDate;
 
 
 }

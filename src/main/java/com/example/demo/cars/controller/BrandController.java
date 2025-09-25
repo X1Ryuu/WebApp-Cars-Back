@@ -15,8 +15,7 @@ import java.text.MessageFormat;
 import java.util.List;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200", allowedHeaders = "*")
-@RequestMapping("/brands")
+@RequestMapping("/api/brands")
 public class BrandController {
 
     BrandService brandService;
@@ -33,21 +32,8 @@ public class BrandController {
         return new ResponseEntity<>(brands, HttpStatus.OK);
     }
 
-
-/*    @GetMapping("/map")
-    public ResponseEntity<Map<String, Long>> getBrandsMap() {
-        List<Brand> brands = brandRepository.findAll();
-
-        // Tworzymy mapę: nameId -> id
-        Map<String, Long> brandMap = brands.stream()
-                .collect(Collectors.toMap(Brand::getNameId, Brand::getId));
-
-        return ResponseEntity.ok(brandMap);
-    }*/
     @GetMapping("/{brandName}")
     public ResponseEntity<Brand> getBrandByName(@PathVariable("brandName") String brandName) {
-        /*Brand brand = brandService.findBrandByName(brandName);
-        return new ResponseEntity<>(brand, HttpStatus.OK);*/
         return new ResponseEntity<>(brandService.findByName(brandName), HttpStatus.OK);
     }
 
@@ -56,7 +42,7 @@ public class BrandController {
     public ResponseEntity<?> addBrand(@RequestBody Brand brand){
 
         System.out.println(brand);
-        brandService.addBrand(brand);
+        //brandService.addBrand(brand);
 
         return new ResponseEntity<>(brand, HttpStatus.CREATED);
 

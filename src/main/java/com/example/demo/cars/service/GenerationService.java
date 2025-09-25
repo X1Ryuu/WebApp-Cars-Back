@@ -14,4 +14,5 @@ public class GenerationService {
     public GenerationService(GenerationRepository generationRepository){this.generationRepository = generationRepository;}
 
     public List<Generation> findGenerationsByModelName(String name){return generationRepository.findAllByModel_NameOrderByName(name);}
+    public List<Generation> findGenerationsByModelId(Long id){return generationRepository.findGenerationsByModel_IdOrderByName(id);}
 }

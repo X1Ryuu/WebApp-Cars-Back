@@ -10,4 +10,5 @@ import java.util.List;
 @Repository
 public interface ModelRepository extends JpaRepository<Model, Long> {
     List<Model> findAllByBrand_NameOrderByName(String name);
+    List<Model> findModelsByBrand_IdOrderByName(Long id);
 }

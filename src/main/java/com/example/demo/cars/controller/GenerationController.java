@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/generations")
+@RequestMapping("/api/generations")
 public class GenerationController {
     GenerationService generationService;
 
@@ -20,8 +20,8 @@ public class GenerationController {
         this.generationService = generationService;
     }
 
-    @GetMapping("/{modelName}")
-    public ResponseEntity<List<Generation>> getGenerationsByModelName(@PathVariable String modelName){
-        return new ResponseEntity<>(generationService.findGenerationsByModelName(modelName), HttpStatus.OK);
+    @GetMapping("/{modelId}")
+    public ResponseEntity<List<Generation>> getGenerationsByModelId(@PathVariable Long modelId){
+        return new ResponseEntity<>(generationService.findGenerationsByModelId(modelId), HttpStatus.OK);
     }
 }

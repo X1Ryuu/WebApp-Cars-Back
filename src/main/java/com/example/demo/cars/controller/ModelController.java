@@ -13,15 +13,13 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200", allowedHeaders = "*")
-@RequestMapping("/models")
+@RequestMapping("/api/models")
 public class ModelController {
 
     ModelService modelService;
-    BrandService brandService;
     @Autowired
-    public ModelController(ModelService modelService, BrandService brandService){this.modelService = modelService;
-        this.brandService = brandService;}
+    public ModelController(ModelService modelService){this.modelService = modelService;
+}
 
     @GetMapping("/all")
     public ResponseEntity<List<Model>>  getAllModels(){
@@ -30,13 +28,9 @@ public class ModelController {
     }
 
 
-    @GetMapping("/{brandName}")
-    public ResponseEntity<List<Model>> getModelsByBrandName(@PathVariable String brandName){
-
-        List<Model> models = modelService.getModelsByBrandName(brandName);
-
-        System.out.println("models: "+models);
-        return new ResponseEntity<>(models, HttpStatus.OK);
+    @GetMapping("/{brandId}")
+    public ResponseEntity<List<Model>> getModelsByBrandName(@PathVariable Long brandId) {
+        return new ResponseEntity<>(modelService.findModelsByBrandId(brandId), HttpStatus.OK);
     }
 
     @PostMapping("/add")

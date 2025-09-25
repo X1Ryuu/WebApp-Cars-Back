@@ -13,26 +13,15 @@ public class ModelService {
     private ModelRepository modelRepository;
 
     public ModelService(ModelRepository modelRepository){this.modelRepository = modelRepository;}
-    public List<Model> getModelsByBrandNameId(String nameId){
-        List<Model> models = new java.util.ArrayList<>();
-        for(Model model : findAllModels()){
-            if(model.getBrand().getName().toLowerCase().equals(nameId))models.add(model);
-        }
-        return models;
-    }
 
-    public List<Model> getModelsByBrandName(String name){
+    public List<Model> findModelsByBrandName(String name){
         return modelRepository.findAllByBrand_NameOrderByName(name);
     }
 
 
 
-    public List<Model> getModelsByBrandId(Long id){
-        List<Model> models = new java.util.ArrayList<>();
-        for(Model model : findAllModels()){
-            if(model.getBrand().getId().equals(id))models.add(model);
-        }
-        return models;
+    public List<Model> findModelsByBrandId(Long id){
+        return modelRepository.findModelsByBrand_IdOrderByName(id);
     }
 
     public void addModel(Model model){

@@ -18,7 +18,7 @@ public class BrandService {
 
     public Brand addBrand(Brand brand) {return brandRepository.save(brand);}
     public void deleteBrand(long id) {brandRepository.deleteById(id);}
-    public List<Brand> findAllBrands(){return brandRepository.findAllByOrderByName();}
+    public List<Brand> findAllBrands(){return brandRepository.findBrandsByOrderByName();}
     public Brand findByName(String name){return brandRepository.findByName(name);}
     public Brand updateBrand(Brand newBrand) {
         return brandRepository.save(newBrand);

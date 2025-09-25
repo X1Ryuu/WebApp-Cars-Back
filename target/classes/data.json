@@ -269,7 +269,19 @@
         "name": "6"
       },
       {
-        "name": "CX-5"
+        "name": "CX-5",
+        "generations": [
+          {
+            "name": "I",
+            "startYear": "2011",
+            "endYear": "2017"
+          },
+          {
+            "name": "II",
+            "startYear": "2017",
+            "endYear": "now"
+          }
+        ]
       },
       {
         "name": "CX-9"
@@ -298,7 +310,135 @@
         "name": "CLS"
       },
       {
-        "name": "GLA"
+        "name": "GLA",
+        "generations": [
+          {
+            "name": "I",
+            "startYear": "2013",
+            "endYear": "2019"
+          },
+          {
+            "name": "II",
+            "startYear": "2020",
+            "endYear": "now",
+            "versions": [
+              {
+                "name": "Off-roader",
+                "startYear": "2020",
+                "endYear": "2023"
+              },
+              {
+                "name": "Off-roader Facelifting",
+                "startYear": "2023",
+                "endYear": "now",
+                "engines": [
+                  {
+                    "name": "180",
+                    "gasoline": "Pb",
+                    "volume": "1.3",
+                    "hp": "136",
+                    "hybridHp": "14",
+                    "injection": "",
+                    "fromDate": "(from 2023)"
+                  },
+                  {
+                    "name": "200",
+                    "gasoline": "Pb",
+                    "volume": "1.3",
+                    "hp": "163",
+                    "hybridHp": "14",
+                    "injection": "",
+                    "fromDate": "(from 2023)"
+                  },
+                  {
+                    "name": "180d",
+                    "gasoline": "Diesel",
+                    "volume": "2.0",
+                    "hp": "116",
+                    "hybridHp": "",
+                    "injection": "",
+                    "fromDate": "(from 2023)"
+                  },
+                  {
+                    "name": "200d",
+                    "gasoline": "Diesel",
+                    "volume": "2.0",
+                    "hp": "150",
+                    "hybridHp": "",
+                    "injection": "",
+                    "fromDate": "(from 2023)"
+                  },
+                  {
+                    "name": "250e",
+                    "gasoline": "Plug-in",
+                    "volume": "1.3",
+                    "hp": "163",
+                    "hybridHp": "109",
+                    "injection": "",
+                    "fromDate": "(from 2023)"
+                  },
+                  {
+                    "name": "220",
+                    "gasoline": "Pb",
+                    "volume": "2.0",
+                    "hp": "190",
+                    "hybridHp": "14",
+                    "injection": "",
+                    "fromDate": "(from 2023)"
+                  },
+                  {
+                    "name": "220d",
+                    "gasoline": "Diesel",
+                    "volume": "2.0",
+                    "hp": "190",
+                    "hybridHp": "",
+                    "injection": "",
+                    "fromDate": "(from 2023)"
+                  },
+                  {
+                    "name": "250",
+                    "gasoline": "Pb",
+                    "volume": "2.0",
+                    "hp": "224",
+                    "hybridHp": "14",
+                    "injection": "",
+                    "fromDate": "(from 2023)"
+                  }
+                ]
+              },
+              {
+                "name": "Off-roader AMG",
+                "startYear": "2020",
+                "endYear": "2023"
+              },
+              {
+                "name": "Off-roader Facelifting AMG",
+                "startYear": "2023",
+                "endYear": "now",
+                "engines": [
+                  {
+                    "name": "35",
+                    "gasoline": "Pb",
+                    "volume": "2.0",
+                    "hp": "306",
+                    "hybridHp": "14",
+                    "injection": "",
+                    "fromDate": "(from 2023)"
+                  },
+                  {
+                    "name": "45s",
+                    "gasoline": "Pb",
+                    "volume": "2.0",
+                    "hp": "421",
+                    "hybridHp": "",
+                    "injection": "",
+                    "fromDate": "(from 2023)"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
       },
       {
         "name": "GLC"

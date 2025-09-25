@@ -12,7 +12,7 @@ import java.util.List;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:4200", allowedHeaders = "*")
-@RequestMapping("/versions")
+@RequestMapping("/api/versions")
 public class VersionController {
     @Autowired
     VersionRepository versionRepository;
@@ -24,21 +24,14 @@ public class VersionController {
         this.versionService = versionService;
     }
 
-/*    @GetMapping("/all")
-    public ResponseEntity<List<Brand>> getAllVersions(){
-        List<Version> versions = versionService.findAllVersions();
-        versions.sort(new BrandComparator());
-        return new ResponseEntity<>(brands, HttpStatus.OK);
-    }*/
-
-    @GetMapping("/gens/{genName}")
-    public ResponseEntity<List<Version>> getVersionsByGenerationName(@PathVariable String genName){
-        return new ResponseEntity<>(versionService.getVersionsByGenerationName(genName), HttpStatus.OK);
+    @GetMapping("/gens/{genId}")
+    public ResponseEntity<List<Version>> getVersionsByGenerationName(@PathVariable Long genId){
+        return new ResponseEntity<>(versionService.findVersionsByGenerationId(genId), HttpStatus.OK);
     }
 
-    @GetMapping("/mods/{verName}")
-    public ResponseEntity<List<Version>> getVersionsByModelName(@PathVariable String verName){
-        return new ResponseEntity<>(versionService.getVersionsByModelName(verName), HttpStatus.OK);
+    @GetMapping("/mods/{verId}")
+    public ResponseEntity<List<Version>> getVersionsByModelName(@PathVariable Long verId){
+        return new ResponseEntity<>(versionService.findVersionsByModelId(verId), HttpStatus.OK);
     }
 
     @PostMapping("/add")
@@ -47,7 +40,7 @@ public class VersionController {
         newVersion.setStartYear(formatDate(versionStartYear));
         newVersion.setEndYear(formatDate(versionEndYear));*/
         System.out.println(version);
-        versionService.addVersion(version);
+        //versionService.addVersion(version);
         return new ResponseEntity<>(version, HttpStatus.CREATED);
 /*        return ResponseEntity.status(HttpStatus.CREATED).body("Brand added successfully!");*/
     }
