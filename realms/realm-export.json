@@ -1,6 +1,6 @@
 {
   "id": "4abeab1b-9867-46e7-aa13-be93f08c37ac",
-  "realm": "my-realm",
+  "realm": "Farco",
   "notBefore": 0,
   "defaultSignatureAlgorithm": "RS256",
   "revokeRefreshToken": false,
